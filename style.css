@@ -27,6 +27,17 @@ body {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
+.container {
+  width: 100%;            /* Đặt chiều rộng tối đa bằng với kích thước màn hình */
+  max-width: 1200px;      /* Giới hạn chiều rộng tối đa của container */
+  margin: 0 auto;         /* Căn giữa container theo chiều ngang */
+  overflow-x: auto;       /* Cho phép cuộn ngang nếu nội dung vượt quá chiều rộng */
+  display: flex;          /* Sử dụng flexbox để quản lý các thành phần bên trong */
+  flex-wrap: nowrap;      /* Đảm bảo các thành phần không được chia thành nhiều hàng */
+}
+
+
+
 .card {
   display: flex;
   justify-content: center;
