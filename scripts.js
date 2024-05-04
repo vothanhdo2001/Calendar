@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const today = new Date();
         const dayOfYear = getDayOfYear(today.getFullYear(), today.getMonth(), today.getDate());
         const personIndex = Math.floor((dayOfYear / 2) % people.length);
-        const person = people[personIndex - 1];
+        const person = people[personIndex];
         headerWho.innerHTML = `${today.toLocaleDateString()} ${today.toLocaleTimeString()} - Trực: <span style="color: ${person.color}">${person.name}</span>`;
     }
 
