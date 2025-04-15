@@ -1,152 +1,81 @@
 
-=========================================
-🏗️ Complex reStructuredText Documentation
-=========================================
-
-:author: Do Vo
-:version: 2.3.1
-:date: 2025-04-15
+==============================
+📚 Why reStructuredText > Markdown
+==============================
 
 .. contents::
-   :depth: 3
+   :depth: 2
    :local:
 
-Introduction
-============
-
-Welcome to the documentation for |project_name| version |version|.
-
-This document demonstrates **advanced formatting** and powerful features of reStructuredText.
-
-.. sidebar:: Author's Note
-
-   This is a sidebar block. It can be used for author tips or side comments.
-
-1. Overview Section
-===================
-
-1.1 Purpose
------------
-
-The goal of this document is to:
-
-- Showcase complex `.rst` usage
-- Use full formatting power
-- Prepare for PDF/HTML generation via **Sphinx**
-
-1.2 Key Features
-----------------
-
-.. note::
-   This document uses inline substitution: |project_name| is a placeholder.
-
-.. warning::
-   Please do **not** copy and paste this into Word 😅.
-
-2. Code and JSON Examples
+1. Mục lục Tự Động (TOC)
 =========================
 
-2.1 Python Example
-------------------
+Bạn không thể làm được điều này bằng Markdown thuần:
 
-.. code-block:: python
-   :linenos:
+.. contents:: Table of Contents
+   :depth: 3
+   :backlinks: entry
 
-   from datetime import datetime
+2. Cross-reference Nội Bộ
+==========================
 
-   def get_timestamp():
-       """Returns current UTC timestamp"""
-       return datetime.utcnow().isoformat()
+Xem thêm phần :ref:`math-section` để hiểu cách viết công thức.
 
-2.2 JSON Example
-----------------
+.. _math-section:
 
-.. code-block:: json
-   :linenos:
+3. Hỗ Trợ Toán Học (Math Support)
+=================================
 
-   {
-     "user": "do.vo",
-     "role": "developer",
-     "languages": ["TypeScript", "Node.js", "Python"]
-   }
-
-3. Tables Galore!
-=================
-
-3.1 Grid Table
---------------
-
-+-----------------+------------+------------------------+
-| Tên trường      | Kiểu dữ liệu | Mô tả                |
-+=================+============+========================+
-| user_id         | int        | ID người dùng         |
-+-----------------+------------+------------------------+
-| email           | string     | Email đăng ký         |
-+-----------------+------------+------------------------+
-| created_at      | datetime   | Ngày tạo tài khoản    |
-+-----------------+------------+------------------------+
-
-3.2 List Table (CSV-style)
---------------------------
-
-.. list-table:: Các ngôn ngữ lập trình
-   :widths: 20 40
-   :header-rows: 1
-
-   * - Tên
-     - Ứng dụng
-   * - Python
-     - Automation, AI, Data
-   * - TypeScript
-     - Frontend, Backend (Node.js)
-   * - Rust
-     - High performance, system-level
-
-4. Math and Formulas
-====================
-
-Inline: :math:`a^2 + b^2 = c^2`
+Inline: :math:`e^{i\pi} + 1 = 0`
 
 Block:
 
 .. math::
 
-   F(x) = \int_{-\infty}^\infty
-   f(t)\,e^{-2\pi i x t}\,dt
+   \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}
 
-5. Cross-References
-===================
+   \nabla \cdot \vec{B} = 0
 
-Jump to :ref:`custom-reference`.
+   \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
 
-.. _custom-reference:
+   \nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
 
-This is a section you can reference later. 🔁
+Markdown không hỗ trợ LaTeX thuần bên trong PDF/HTML nếu không cài thêm plugin như KaTeX.
 
-6. Custom Roles & Substitution
-==============================
+4. Ghi chú và Cảnh Báo (Admonition)
+====================================
 
-.. role:: highlight
+.. note::
+   Đây là một ghi chú quan trọng.
 
-:highlight:`This text is highlighted using a custom role.`
+.. warning::
+   Cẩn thận! Thao tác này có thể gây lỗi hệ thống.
 
-Macros:
+.. tip::
+   Bạn nên kiểm tra kết nối mạng trước khi tiếp tục.
 
-- Project: |project_name|
-- Version: |version|
+5. Bảng Dữ Liệu Phức Tạp (Grid Table)
+======================================
 
-7. Embed Raw HTML
-=================
++------------+------------+------------------------+
+| Họ tên     | Vai trò    | Ghi chú                |
++============+============+========================+
+| Linh       | Developer  | Full-stack (TypeScript)|
++------------+------------+------------------------+
+| Do         | Analyst    | Data-heavy workloads   |
++------------+------------+------------------------+
 
-.. raw:: html
+Markdown không tự wrap nội dung bảng, dễ bị vỡ layout nếu dài.
 
-   <div style="color:darkblue; font-weight:bold;">
-     This is raw HTML inside RST!
-   </div>
+6. Macro Tái Sử Dụng (Substitution)
+====================================
 
-.. rubric:: ✅ Cảm ơn bạn đã đọc đến đây!
+Dự án: |project|  
+Phiên bản: |version|
+
+Dòng này dùng macro tái sử dụng cực tiện.
 
 ----
 
-.. |project_name| replace:: **Advanced reST Doc**
-.. |version| replace:: 2.3.1
+.. |project| replace:: **Siêu Dự Án reST**
+.. |version| replace:: `v9.5.2`
